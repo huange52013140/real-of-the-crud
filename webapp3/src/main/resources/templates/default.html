@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+   <th:block th:include="include :: header">
+   </th:block>
+</head>
+<body>
+    <div th:insert="include :: nav"></div>
+    <h2 th:text="#{student.list.title}"></h2>
+    <table class="table table-striped">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>studentId</th>
+            <th>ClassName</th>x
+            <th>address</th>
+            <th>mobile</th>
+            <th>操作</th>
+        </tr>
+        <tr th:each="stu : ${students}">
+            <td th:text="${stu.id}"></td>
+            <td th:text="${stu.name}"></td>
+            <td th:text="${stu.studentId}"></td>
+            <td th:text="${stu.ClassName}"></td>
+            <td th:text="${stu.address}"></td>
+            <td th:text="${stu.mobile}"></td>
+            <td>
+                <a th:href="@{/student/edit(id=${stu.id})}">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </a>
+                <a th:href="@{/student/delete(id=${stu.id})}">
+                    <span class="glyphicon glyphicon-minus"></span>
+                </a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

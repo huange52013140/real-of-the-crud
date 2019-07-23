@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="include :: header">
+    </th:block>
+</head>
+<body>
+<div th:insert="include :: nav"></div>
+<h2 align="center">直接修改</h2>
+<div class="container">
+    <form method="post" th:action="@{/Score/update}">
+        <div class="form-group">
+            <label for="id">id</label>
+            <input type="number" th:value="${scores.id}"
+                   class="form-control" id="id" name="id" placeholder="number" readonly>
+        </div>
+        <div class="form-group">
+            <label for="studentId">studentId</label>
+            <input type="number" th:value="${scores.studentId}" class="form-control"
+                   id="studentId" name="studentId"placeholder="studentId">
+        </div>
+        <div class="form-group">
+            <label for="courseId">courseId</label>
+            <input type="number" th:value="${scores.courseId}"
+                   class="form-control" id="courseId" name="courseId"
+                   placeholder="courseId">
+        </div>
+        <div class="form-group">
+            <label for="dt">dt</label>
+            <input type="text" th:value="${scores.dt}"
+                   class="form-control" id="dt" name="dt"placeholder="dt">
+        </div>
+        <div class="form-group">
+            <label for="score">score</label>
+            <input type="text" th:value="${scores.score}"
+                   class="form-control" id="score" name="score"placeholder="score">
+        </div>
+        <button type="submit" class="btn btn-default">修改课程信息</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+   <th:block th:include="include :: header">
+   </th:block>
+</head>
+<body>
+    <div th:insert="include :: nav"></div>
+    <h2 align="center" style="margin-bottom: auto ">课程信息表</h2>
+    <table class="table table-striped">
+        <tr>
+            <th>id</th>
+            <th>StudentId</th>
+            <th>courseId</th>
+            <th>dt</th>
+            <th>score</th>
+            <th>成绩信息表操作</th>
+        </tr>
+        <tr th:each="cu : ${scores}">
+            <td th:text="${cu.id}"></td>
+            <td th:text="${cu.StudentId}"></td>
+            <td th:text="${cu.courseId}"></td>
+            <td th:text="${cu.dt}"></td>
+            <td th:text="${cu.score}"></td>
+            <td>
+                <a th:href="@{/Score/ScoreEdit(id=${cu.id})}">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </a>
+                <br>
+                <a th:href="@{/Score/delete(id=${cu.id})}">
+                    <span class="glyphicon glyphicon-minus"></span>
+                </a>
+
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <th:block th:include="include :: header">
+        </th:block>
+    </head>
+    <body>
+    <div th:insert="include :: nav"></div>
+    <h2 align="center">直接修改</h2>
+    <div class="container">
+    <form method="post" th:action="@{/student/update}">
+        <div class="form-group">
+            <label for="id"></label>
+            <input type="number" th:value="${students.id}" class="form-control"
+                   id="id" name="id" placeholder="number" readonly>
+        </div>
+        <div class="form-group">
+            <label for="name">Password</label>
+            <input type="text" th:value="${students.name}" class="form-control"
+                   id="name" name="name"placeholder="name">
+        </div>
+        <div class="form-group">
+            <label for="studentId">studentId</label>
+            <input type="number" th:value="${students.studentId}" class="form-control"
+                   id="studentId" name="studentId"placeholder="studentId">
+        </div>
+        <div class="form-group">
+            <label for="ClassName">ClassName</label>
+            <input type="text" th:value="${students.ClassName}" class="form-control"
+                   id="ClassName" name="ClassName"placeholder="ClassName">
+        </div>
+        <div class="form-group">
+            <label for="address">address</label>
+            <input type="text" th:value="${students.address}" class="form-control"
+                   id="address" name="address"placeholder="address">
+        </div>
+        <div class="form-group">
+            <label for="mobile">mobile</label>
+            <input type="number" th:value="${students.mobile}" class="form-control"
+                   id="mobile" name="mobile"placeholder="mobile">
+        </div>
+
+        <button type="submit" class="btn btn-default">提交</button>
+    </form>
+    </div>
+</body>
+</html>

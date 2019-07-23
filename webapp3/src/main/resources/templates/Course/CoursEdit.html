@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="include :: header">
+    </th:block>
+</head>
+<body>
+<div th:insert="include :: nav"></div>
+<h2 align="center">直接修改</h2>
+<div class="container">
+    <form method="post" th:action="@{/Course/update}">
+        <div class="form-group">
+            <label for="id">id</label>
+            <input type="number" th:value="${courses.id}"
+                   class="form-control" id="id" name="id" placeholder="number" readonly>
+        </div>
+        <div class="form-group">
+            <label for="name">Password</label>
+            <input type="text" th:value="${courses.name}" class="form-control" id="name" name="name"placeholder="name">
+        </div>
+        <div class="form-group">
+            <label for="courseScore">courseScore</label>
+            <input type="number" th:value="${courses.courseScore}"
+                   class="form-control" id="courseScore" name="courseScore"
+                   placeholder="courseScore">
+        </div>
+        <div class="form-group">
+            <label for="courseTime">courseTime</label>
+            <input type="text" th:value="${courses.courseTime}"
+                   class="form-control" id="courseTime" name="courseTime"placeholder="courseTime">
+        </div>
+        <button type="submit" class="btn btn-default">修改课程信息</button>
+    </form>
+</div>
+</body>
+</html>

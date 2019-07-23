@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="include :: header">
+    </th:block>
+</head>
+<body>
+<div th:insert="include :: nav"></div>
+<h2 align="center">添加</h2>
+<div class="container">
+    <form method="post" th:action="@{/student/create}">
+        <div class="form-group">
+            <label for="id"></label>
+            <input type="number"  class="form-control" id="id" name="id" placeholder="studentid" readonly>
+        </div>
+        <div class="form-group">
+            <label for="name">Password</label>
+            <input type="text"   class="form-control" id="name" name="name"placeholder="name">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>
+</body>
+</html>
